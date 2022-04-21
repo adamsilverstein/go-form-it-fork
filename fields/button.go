@@ -1,9 +1,5 @@
 package fields
 
-import (
-	"github.com/kirves/go-form-it/common"
-)
-
 // // Generic button type
 // type ButtonType struct {
 // 	Field

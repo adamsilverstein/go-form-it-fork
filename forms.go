@@ -5,11 +5,11 @@
 package forms
 
 import (
-	"github.com/kirves/go-form-it/common"
-	"github.com/kirves/go-form-it/fields"
 	"html/template"
 	"reflect"
 	"strings"
+
+	"github.com/adamsilverstein/go-form-it/fields"
 )
 
 // Form methods: POST or GET.

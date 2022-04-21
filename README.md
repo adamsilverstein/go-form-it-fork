@@ -12,7 +12,7 @@ You can just create your form instance and add / populate / customize fields bas
 
 To integrate `go-form-it` forms into your application simply pass the form object to the template and call its Render method.
 In your code:
-	
+
 	tmpl.Execute(buf, map[string]interface{}{"form": form})
 
 In your template:
@@ -37,10 +37,10 @@ From scratch
 ------------
 
 You can create a form instance by simply deciding its style and providing its method and action:
-	
+
 	form := BaseForm(POST, "/action.html")
 
-or 
+or
 
 	form := BootstrapForm(POST, "/action.html")
 
@@ -70,7 +70,7 @@ Typical usage looks like this:
 		)
 
 A call to `form.Render()` returns the following form:
-	
+
 	<form method="POST" action="/action.html">
 		<label>Username</label>
 		<input type="text" name="text_field">
@@ -97,7 +97,7 @@ Default type-to-field mapping is as follows:
 
 You can customize field behaviors by adding tags to instance fields.
 Without tags this code:
-	
+
 	type User struct {
 		Username 	string
 		Password1 	string
@@ -290,4 +290,4 @@ Buttons can be created calling either the `Button`, `SubmitButton` or `ResetButt
 License
 =======
 
-`go-form-it` is released under the MIT license. See [LICENSE](https://github.com/kirves/go-form-it/blob/master/LICENSE).
+`go-form-it` is released under the MIT license. See [LICENSE](https://github.com/adamsilverstein/go-form-it/blob/master/LICENSE).

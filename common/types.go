@@ -2,13 +2,13 @@
 package formcommon
 
 import (
+	"log"
 	"os"
-	"path"
-	"strings"
+	"path/filepath"
 )
 
 const (
-	PACKAGE_NAME = "github.com/kirves/go-form-it"
+	PACKAGE_NAME = "github.com/adamsilverstein/go-form-it"
 )
 
 // Input field types

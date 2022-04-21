@@ -2,10 +2,10 @@
 package fields
 
 import (
-	"github.com/kirves/go-form-it/common"
-	"github.com/kirves/go-form-it/widgets"
 	"html/template"
 	"strings"
+
+	"github.com/adamsilverstein/go-form-it/widgets"
 )
 
 // Field is a generic type containing all data associated to an input field.

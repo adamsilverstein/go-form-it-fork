@@ -2,9 +2,10 @@ package forms
 
 import (
 	"bytes"
-	"github.com/kirves/go-form-it/fields"
 	"html/template"
 	"reflect"
+
+	"github.com/adamsilverstein/go-form-it/fields"
 )
 
 // FormElement interface defines a form object (usually a Field or a FieldSet) that can be rendered as a template.HTML object.

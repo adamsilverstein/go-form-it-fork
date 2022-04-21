@@ -2,7 +2,6 @@ package fields
 
 import (
 	"fmt"
-	"github.com/kirves/go-form-it/common"
 	"reflect"
 	"strings"
 )
