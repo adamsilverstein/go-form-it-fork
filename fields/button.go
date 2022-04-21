@@ -1,5 +1,9 @@
 package fields
 
+import (
+	formcommon "github.com/adamsilverstein/go-form-it-fork/formcommon"
+)
+
 // // Generic button type
 // type ButtonType struct {
 // 	Field

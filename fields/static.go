@@ -3,6 +3,8 @@ package fields
 import (
 	"fmt"
 	"reflect"
+
+	formcommon "github.com/adamsilverstein/go-form-it-fork/formcommon"
 )
 
 // // Static field type
