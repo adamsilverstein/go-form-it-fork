@@ -7,6 +7,8 @@ import (
 	"bytes"
 	"fmt"
 	"html/template"
+
+	formcommon "../formcommon"
 )
 
 // Simple widget object that gets executed at render time.
