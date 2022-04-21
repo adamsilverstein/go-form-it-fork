@@ -290,4 +290,4 @@ Buttons can be created calling either the `Button`, `SubmitButton` or `ResetButt
 License
 =======
 
-`go-form-it` is released under the MIT license. See [LICENSE](https://github.com/adamsilverstein/go-form-it/blob/master/LICENSE).
+`go-form-it` is released under the MIT license. See [LICENSE](https://github.com/adamsilverstein/go-form-it-fork/blob/master/LICENSE).

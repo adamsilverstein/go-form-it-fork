@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"reflect"
 
-	"github.com/adamsilverstein/go-form-it/fields"
+	"github.com/adamsilverstein/go-form-it-fork/fields"
 )
 
 // FormElement interface defines a form object (usually a Field or a FieldSet) that can be rendered as a template.HTML object.

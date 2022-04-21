@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"strings"
 
-	"github.com/adamsilverstein/go-form-it/widgets"
+	"github.com/adamsilverstein/go-form-it-fork/widgets"
 )
 
 // Field is a generic type containing all data associated to an input field.

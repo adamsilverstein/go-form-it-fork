@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"html/template"
 
-	"github.com/adamsilverstein/go-form-it/fields"
+	"github.com/adamsilverstein/go-form-it-fork/fields"
 )
 
 // FieldSetType is a collection of fields grouped within a form.

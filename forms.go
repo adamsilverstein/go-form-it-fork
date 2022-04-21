@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/adamsilverstein/go-form-it/fields"
+	"github.com/adamsilverstein/go-form-it-fork/fields"
 )
 
 // Form methods: POST or GET.
