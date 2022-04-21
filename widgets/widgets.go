@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"html/template"
 
-	formcommon "../formcommon"
+	"github.com/adamsilverstein/go-form-it-fork/formcommon"
 )
 
 // Simple widget object that gets executed at render time.
