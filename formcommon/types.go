@@ -50,7 +50,6 @@ const (
 // CreateUrl creates the complete url of the desired widget template
 func CreateUrl(widget string) string {
 	// Construct the local relative path.
-	widget = "forms/" + widget
 	widget, _ = filepath.Abs(widget)
 	log.Printf("widget: %+v", widget)
 
