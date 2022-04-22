@@ -51,7 +51,6 @@ const (
 func CreateUrl(widget string) string {
 	// Construct the local relative path.
 	widget, _ = filepath.Abs(widget)
-	log.Printf("widget: %+v", widget)
 
 	if _, err := os.Stat(widget); os.IsNotExist(err) {
 		log.Printf("err: %+v", err)
