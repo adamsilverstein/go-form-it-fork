@@ -26,7 +26,7 @@ func (f *FieldSetType) Render() template.HTML {
 		"classes": f.class,
 		"tags":    f.tags,
 	}
-	err := template.Must(template.ParseFiles(formcommon.CreateUrl("static/templates/forms/fieldset.html"))).Execute(buf, data)
+	err := template.Must(template.ParseFiles(formcommon.CreateUrl("static/templates/forms/fieldset.html", ""))).Execute(buf, data)
 	if err != nil {
 		panic(err)
 	}

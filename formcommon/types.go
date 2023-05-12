@@ -2,6 +2,7 @@
 package formcommon
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -48,12 +49,13 @@ const (
 )
 
 // CreateUrl creates the complete url of the desired widget template
-func CreateUrl(widget string) string {
+func CreateUrl(widget, style string) string {
 	// Construct the local relative path.
-	widget, _ = filepath.Abs(widget)
+	widget = fmt.Sprint(widget, style)
+	styledWidget, _ := filepath.Abs(widget)
 
-	if _, err := os.Stat(widget); os.IsNotExist(err) {
+	if _, err := os.Stat(styledWidget); os.IsNotExist(err) {
 		log.Printf("err: %+v", err)
 	}
-	return widget
+	return styledWidget
 }
