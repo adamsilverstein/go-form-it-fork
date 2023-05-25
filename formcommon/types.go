@@ -51,7 +51,7 @@ const (
 // CreateUrl creates the complete url of the desired widget template
 func CreateUrl(widget, style string) string {
 	// Construct the local relative path.
-	widget = fmt.Sprint(widget, style)
+	widget = fmt.Sprintf(widget, style)
 	styledWidget, _ := filepath.Abs(widget)
 
 	if _, err := os.Stat(styledWidget); os.IsNotExist(err) {
