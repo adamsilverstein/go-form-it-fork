@@ -5,7 +5,6 @@ package widgets
 
 import (
 	"bytes"
-	"fmt"
 	"html/template"
 
 	formcommon "github.com/adamsilverstein/go-form-it-fork/formcommon"
@@ -31,40 +30,40 @@ func (w *Widget) Render(data interface{}) string {
 
 // BaseWidget creates a Widget based on style and inpuType parameters, both defined in the common package.
 func BaseWidget(style, inputType string) *Widget {
-	var urls []string = []string{formcommon.CreateUrl("static/templates/forms/%s/generic.tmpl")}
+	urls := []string{formcommon.CreateUrl("static/templates/forms/%s/generic.tmpl", style)}
 	switch inputType {
 	case formcommon.BUTTON:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/button.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/button.html", style))
 	case formcommon.CHECKBOX:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/options/checkbox.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/options/checkbox.html", style))
 	case formcommon.TEXTAREA:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/text/textareainput.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/text/textareainput.html", style))
 	case formcommon.SELECT:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/options/select.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/options/select.html", style))
 	case formcommon.PASSWORD:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/text/passwordinput.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/text/passwordinput.html", style))
 	case formcommon.RADIO:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/options/radiobutton.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/options/radiobutton.html", style))
 	case formcommon.TEXT:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/text/textinput.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/text/textinput.html", style))
 	case formcommon.RANGE:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/number/range.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/number/range.html", style))
 	case formcommon.NUMBER:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/number/number.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/number/number.html", style))
 	case formcommon.RESET:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/button.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/button.html", style))
 	case formcommon.SUBMIT:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/button.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/button.html", style))
 	case formcommon.DATE:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/date.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/date.html", style))
 	case formcommon.DATETIME:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/datetime.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/datetime.html", style))
 	case formcommon.TIME:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/time.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/time.html", style))
 	case formcommon.DATETIME_LOCAL:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/datetime.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/datetime/datetime.html", style))
 	case formcommon.STATIC:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/static.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/static.html", style))
 	case formcommon.SEARCH,
 		formcommon.TEL,
 		formcommon.URL,
@@ -75,14 +74,10 @@ func BaseWidget(style, inputType string) *Widget {
 		formcommon.HIDDEN,
 		formcommon.IMAGE,
 		formcommon.MONTH:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/input.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/input.html", style))
 	default:
-		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/input.html"))
+		urls = append(urls, formcommon.CreateUrl("static/templates/forms/%s/input.html", style))
 	}
-	styledUrls := make([]string, len(urls))
-	for i := range urls {
-		styledUrls[i] = fmt.Sprintf(urls[i], style)
-	}
-	templ := template.Must(template.ParseFiles(styledUrls...))
+	templ := template.Must(template.ParseFiles(urls...))
 	return &Widget{templ}
 }
